@@ -1,11 +1,10 @@
 body{
 	background: #7FFF00; //https://en.wikipedia.org/wiki/Chartreuse_%28color%29
-	//padding-top: 25px;
-	padding-bottom: 30px;
-	//border: 1px solid navy;
-	margin-left: auto;
-	margin-right: auto;
-	 
+	margin-top: 100px;
+	margin-left: 10%;
+	margin-right: 10%;
+	border: 1px solid white;
+	
 }
 
 h3 {
@@ -22,9 +21,17 @@ p.poem {
 
 #main{
 	width: 50%;
+	margin-top: 25;
 	padding-top: 15px;
 	padding-bottom: 30px;
 	border: 5px solid navy;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+#footer{
+	font-family: sans-serif;
+	color: 0022AA;
+
+
 }
