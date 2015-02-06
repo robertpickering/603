@@ -1,0 +1,30 @@
+body{
+	background: #7FFF00; //https://en.wikipedia.org/wiki/Chartreuse_%28color%29
+	//padding-top: 25px;
+	padding-bottom: 30px;
+	//border: 1px solid navy;
+	margin-left: auto;
+	margin-right: auto;
+	 
+}
+
+h3 {
+	font-family: sans-serif;
+	color: FF00FF;
+}
+
+p.poem {
+	font-family: arial, sans-serif;
+	color: FF6600;
+	font-style: italic;
+
+}
+
+#main{
+	width: 50%;
+	padding-top: 15px;
+	padding-bottom: 30px;
+	border: 5px solid navy;
+	margin-left: auto;
+	margin-right: auto;
+}
