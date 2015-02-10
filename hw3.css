@@ -1,0 +1,49 @@
+body{
+	background: #D3D4A3; 
+	margin-top: 100px;
+	margin-left: 10%;
+	margin-right: 10%;
+	border: 1px dotted red;
+	padding: 25px;
+
+	font-family: arial, sans-serif;
+	color: 012345;
+	
+	
+}
+
+h3, h4{
+	font-family: sans-serif;
+	color: 123456;
+}
+
+table  {
+	font-family: arial, sans-serif;
+	color: 012345;
+	font-style: italic;
+
+}
+
+.Intro{
+	font-family: sans-serif;
+	color: 0022AA;
+
+
+}
+
+#main{
+	width: 50%;
+	margin-top: 25;
+	padding-top: 15px;
+	padding-bottom: 30px;
+	border: 5px solid navy;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#footer{
+	font-family: sans-serif;
+	color: 0022AA;
+
+
+}

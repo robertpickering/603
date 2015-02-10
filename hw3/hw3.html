@@ -1,0 +1,140 @@
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" href="hw3.css" type="text/css">
+  <title>INFM 603 Spring 2015 Hw3</title>
+  <meta http-equiv="expires" content="0">
+  <!-- <link href="hw2.css" rel="stylesheet" type="text/css"> -->
+</head>
+
+<body>
+<div id ="Intro">
+ 
+    <h3>
+      Another Javascript Calculator!
+    </h3>
+    <p class="IntrestCalc">Herein lies yet another rendition of a Javascript Calulator.  
+    	Essentially, it prints out each year's return for a given investment at a given annual percent return.  
+    	Interest is compounded annually.
+
+    <h4>
+      Instructions:
+    </h4>
+    Enter only numbers for "Principle" investment and "Interest Rate".  
+    For example, if you want to calculate ten years of return data for an initial investment of $10,000.00 at an interest rate of 8% (or 0.08), 
+    simply enter 10000.00 and 0.08.  Entries other than numbers will cause this script to error out.
+  </p>
+</div>
+<div id="inputform">
+   <form>
+Principle: <input type='text' id='principle'/> <br>
+Interest Rate: <input type="text" id='interest'><br>
+<input type='button' 
+  onclick="isNumeric(document.getElementById('principle'), '1-9 Only Please')"
+  onclick="isNumeric(document.getElementById('interest'), 'Numbers Only')" 
+  value='Check Field' />
+</form>
+</div>
+
+<script type='text/javascript'>
+
+	function isNumeric(elem, error){
+		if(isNaN(elem)){
+			alert(error);
+			elem.focus();
+			return false;
+		}else{
+			return true;
+		}
+	}
+</script>
+
+
+
+
+<hr>
+
+<div id="table">
+
+
+<table border="1">
+  <caption>10 Year Return on investment</caption>
+  <col>
+  <col>
+  <col>
+  <col>
+  <tbody>
+    <tr id="rowhead">
+      <td>Year (n)</td>
+      <td>Total Principle (P) on which interest is Calculated in Year n &nbsp;
+      </td>
+      <td>Interest (i) owed at the end of Year n from Year n's Unpaid Total
+        Principle &nbsp;</td>
+      <td>Total amount fue at the end of Year n. New Total for Principle for
+        Year n+1 &nbsp;</td>
+    </tr>
+    <tr id ='y1'>
+      <td id = "n1">1</td>
+      <td id = "p1">0</td>
+      <td id = "i1">0</td>
+      <td id = "tot1">0</td>
+    </tr>
+    <tr id = "y2">
+      <td id = "n2">2</td>
+      <td id = "p2">0</td>
+      <td id = "i2">0</td>
+      <td id = "tot2">0</td>
+    </tr>
+    <tr id = "y3">
+      <td id = "n3">3</td>
+      <td id = "p3">0</td>
+      <td id = "i3">0</td>
+      <td id = "tot3">0</td>
+    </tr>
+    <tr id = "y4">
+      <td id = "n4">4</td>
+      <td id = "p4">0</td>
+      <td id = "i4">0</td>
+      <td id = "tot4">0</td>
+    </tr>
+    <tr id = "y5">
+      <td id = "n5">5</td>
+      <td id = "p5">0</td>
+      <td id = "i5">0</td>
+      <td id = "tot5">0</td>
+    </tr>
+    <tr id = "y6">
+      <td id = "n6">6</td>
+      <td id = "p6">0</td>
+      <td id = "i6">0</td>
+      <td id = "tot6">0</td>
+    </tr>
+    <tr id = "y7">
+      <td id = "n7">7</td>
+      <td id = "p7">0</td>
+      <td id = "i7">0</td>
+      <td id = "tot7">0</td>
+    </tr>
+    <tr id = "y8">
+      <td id = "n8">8</td>
+      <td id = "p8">0</td>
+      <td id = "i8">0</td>
+      <td id = "tot8">0</td>
+    </tr>
+    <tr id = "y9">
+      <td id = "n9">9</td>
+      <td id = "p9">0</td>
+      <td id = "i9">0</td>
+      <td id = "tot9">0</td>
+    </tr>
+    <tr id = "y10">
+      <td id = "n10">10</td>
+      <td id = "p10">0</td>
+      <td id = "i10">0</td>
+      <td id = "tot10">0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</body>
+</html>
