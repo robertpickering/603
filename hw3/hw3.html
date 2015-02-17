@@ -16,9 +16,13 @@ function calculate (p, ir) {
 	var pr = p;  //This is the principle value and serves as the first present value
 	var i = ir;  //This is the interest rate
 	var factor = (1+i);  //This is what we multiply the presesnt value by raised to the exponent of the year
-	var fv = []; //This is the array for the future values
-	var interest = []; // This is the array for interest for each year
+	var fv1 = []; //This is the array for the future values
+	var fv2 = [];
+	var interest = [];
+	var interest1 = []; // This is the array for interest for each year
 	var yeartot= [];
+	var yeartot1= [];
+	
 	/* This is the for loop which will fill the array with compound interest values
 	 * The Future value (fv) is calculated by multiplying the present value
 	 * by (1 + i)^j and fills the array fv with each value of j as the for loop loops.
@@ -29,15 +33,23 @@ function calculate (p, ir) {
 	 * 
 	 * The arrays are dumped successively to the divs at the end of the file.
 	 * An offset of 10 and 20 are applies to 
+	 * 
+	 * Floating point error fix found at http://www.mredkj.com/javascript/nfbasic2.html using .toFixed method.
+	 * 
 	 */
 	
 	for (var j=0; j < 11; j++) {
-		fv[j] = (pr * Math.pow(factor, j)); 
-		interest[j] = (fv[j]) * (i);
-		yeartot[j] = fv[j] + interest[j];
-	  document.getElementById(j).innerHTML = fv[j] ; 
-	  document.getElementById(j+11).innerHTML = interest[j] ; 
-	  document.getElementById(j+22).innerHTML = yeartot[j] ; 
+		fv1[j] = (pr * Math.pow(factor, j)); 
+		fv2[j] = fv1[j].toFixed(2);
+		
+		interest[j] = ((fv2[j]) * (i));
+		interest1[j] = interest[j].toFixed(2);
+		
+		yeartot[j] = fv1[j] + interest[j];
+		yeartot1[j] = yeartot[j].toFixed(2);
+	  document.getElementById(j).innerHTML = "$" + fv2[j] ; 
+	  document.getElementById(j+11).innerHTML = "$" + interest1[j] ; 
+	  document.getElementById(j+22).innerHTML = "$" + yeartot1[j] ; 
 	   
 	  
 	};
@@ -53,31 +65,29 @@ function calculate (p, ir) {
  * we assume malicious behavior and the user gets what they derserve.
  * If all of the above passes, the values are passed to the calculate 
  * function.
+ * 
+ * Input validation inspiration derived from http://www.tizag.com/javascriptT/javascriptform.php
+ * 
  */			
-function compinterest(x, y, helperMsg){
+function compinterest(x, y, problem){
 	
 	var principle = Number(document.getElementById('inv').value);
 	var interestrate = Number(document.getElementById('intr').value);
 	
 	if(principle.length == 0 || interestrate.length == 0){
-		alert(helperMsg);
-		elem.focus();
+		alert(problem);
 		return true;
 		
 	}else if(isNaN(x.value) || isNaN(y.value)){
-		alert(helperMsg);
-		elem.focus();
+		alert(problem);
 		return true;
 	}
 	else if(x.value < 0 || y.value < 0 ){
-		alert(helperMsg);
-		elem.focus();
+		alert(problem);
 		return true;
 	}
 	else if (x.value == '') {
-		
-		alert(helperMsg);
-		elem.focus();
+		alert(problem);
 		return true;
 		
 	}
