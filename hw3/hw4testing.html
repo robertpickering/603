@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		
+		<meta name="author" content="Robert Pickering" />
+		 <link rel="stylesheet" href="hw3.css" type="text/css">
+  <title>INFM 603 Spring 2015 Hw4</title>
+  <meta http-equiv="expires" content="0">
+		
+		<script src="hw4testing.js"></script>
+	</head>
+	
+	
+	<body>
+
+<div id ="Intro">
+ 
+    <h3>
+      A Binary Search function!
+    </h3>
+    <p class="IntrestCalc">Herein lies yet another rendition of the venerable Javascript based Compound Interest Calulator.  <br>
+    	Essentially, it prints out each year's return for a given investment at a given annual percent return.  <br>
+    	Interest is compounded annually.  The second column starts with the your initial investment followed by the <br>
+    	value of the investment at the start of each successive year.  Column 3 provides the interest earned in the year.<br>
+    	Finally, Column 4 provides the value of investment at the end of a particular year.  The calculator is only functional <br>
+    	for years 0 through 10.
+
+    <h4>
+      Instructions:
+    </h4>
+    Enter a SKU number to be searched
+  </p>
+</div>		
+	
+	<!-- This is the user input form -->
+		
+<div id="inputform">
+   <form>
+   	<table border="0" cellspacing="5" cellpadding="5">
+		   <tr>
+		   	<th>What is your number? 
+		   		</th>
+		   	<td><input type='text' id="searchnum"/><br></td>
+		   	</tr>
+		   
+		   	<tr>
+		   		<td> 
+		   			</td>
+		   		<td>
+		   			<input type='button' 
+						onclick="verify(document.getElementById('searchnum'), 'Please suply a positive integer.')"
+						value='Find Me!' />
+		   		</td>
+		   	</tr>
+		   
+	   </table>
+
+
+</form>
+</div>
+
+<!-- This is the table to hold the output values. -->
+<p>
+<table border="1" cellspacing="0" cellpadding="0">
+	<tr>
+		<th> SKU Found</th>
+		
+	</tr>
+	
+	<tr>
+		<td>
+		<div id="found">1</div>
+		</td>
+		
+		
+	</tr>
+		
+</table>
+</p>
+
+<p>
+<table border="1" cellspacing="0" cellpadding="0">
+	<tr>
+		<th> SKU Not Found </th>
+		
+	</tr>
+	
+	<tr>
+		<td>
+		<div id="notfound">2</div>
+		</td>
+		
+		
+	</tr>
+		
+</table>
+</p>
+	</body>
+</html>
+
