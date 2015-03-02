@@ -60,32 +60,33 @@ function binsearch (searchnum) {
  * Input validation inspiration derived from http://www.tizag.com/javascriptT/javascriptform.php
  * 
  */			
-function verify(searchnum, problem){
-	
-	var newsearch = Number(document.getElementById('searchnum').value);
-	
+//function verify(searchnum, problem){
+function verify(searcher, problem){	
+	//var a = searchnum;
+	var newsearch = document.getElementById('searcher').value;
+	var newsearch1 = Number(newsearch);
 	if(newsearch.length == 0){
 		alert(problem);
 		return true;
 		
-	}else if(isNaN(searchnum.value)){
+	}//else if(isNaN(newsearch1.value)){
+		//alert(problem);
+		//return true;
+	//}
+	else if(newsearch1.value < 0){
 		alert(problem);
 		return true;
 	}
-	else if(searchnum.value < 0){
-		alert(problem);
-		return true;
-	}
-	else if (searchnum.value == '') {
+	else if (newsearch.value == '') {
 		alert(problem);
 		return true;
 		
 	}
 	
 	else{
-		document.getElementById("notfound").innerHTML = searchnum;
-		binsearch(searchnum);
-		return true;
+		document.getElementById("found").innerHTML = newsearch1;
+		//binsearch(searchnum);
+		//return true;
 		
 	}
 	  
